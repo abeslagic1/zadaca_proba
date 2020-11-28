@@ -4,6 +4,24 @@ using System;
 
 namespace Unit_Testovi
 {
+    /*kreiran je interface SpyInterface zbog implementacije zamjenskog objekta, takodjer kao i klasa Recenzija1.
+     * Ova klasa treba da sadrzi implementaciju metode DatjUtisak(), koja treba da vraca vrijednost "Pozitivan", ukoliko
+     *zelimo da nam prodje definisani test.*/
+    public interface SpyInterface:IRecenzija
+    {
+        string DajUtisak { get; }
+    }
+    public class Recenzija1:SpyInterface
+    {
+        string SpyInterface.DajUtisak => "Pozitivan";
+
+        string IRecenzija.DajUtisak()
+        {
+            return "Pozitivan";
+        }
+    }
+
+
     [TestClass]
     public class NoviTestovi
     {
@@ -17,8 +35,8 @@ namespace Unit_Testovi
 
             Chat chat = new Chat(k1, k2);
             chat.DodajNovuPoruku(k1, k2, "volim te");
-            IRecenzija r = new Recenzija();
-
+            Recenzija1 r = new Recenzija1();
+            
             Komunikator k = new Komunikator();
             bool uspješnost = k.DaLiJeSpajanjeUspjesno(chat, r);
 
