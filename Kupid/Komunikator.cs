@@ -104,8 +104,9 @@ namespace Kupid
                             vracam.Add(lokalne[j]);
                         }
                     }
-                    if (razgovori.Count == 0) throw new ArgumentNullException("nema");
-                    if (vracam.Count == 0) throw new ArgumentNullException("nema");
+
+                    if (vracam.Count == 0) throw new Ar
+                    
                 }
             }
             return vracam;

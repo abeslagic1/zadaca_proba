@@ -142,6 +142,15 @@ namespace Unit_Testovi
 
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void IzlistavanjeSvihPorukaSaSadrzajem3()
+        {
+            Komunikator k = new Komunikator();
+            k.IzlistavanjeSvihPorukaSaSadržajem("matematika");
+
+        }
+
         #endregion
     }
 }
