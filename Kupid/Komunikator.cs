@@ -98,10 +98,10 @@ namespace Kupid
                     List<Poruka> lokalne=razgovori[i].Poruke;
                     for(int j = 0; j < lokalne.Count; j++)
                     {
-                        if (lokalne[i].Sadrzaj.Contains(sadržaj) && !lokalne[i].Posiljalac.Ime.Equals("admin") &&
-                            !lokalne[i].Primalac.Ime.Equals("admin"))
+                        if (lokalne[j].Sadrzaj.Contains(sadržaj) && !lokalne[j].Posiljalac.Ime.Equals("admin") &&
+                            !lokalne[j].Primalac.Ime.Equals("admin"))
                         {
-                            vracam.Add(lokalne[i]);
+                            vracam.Add(lokalne[j]);
                         }
                     }
                     if (razgovori.Count == 0) throw new ArgumentNullException("nema");
